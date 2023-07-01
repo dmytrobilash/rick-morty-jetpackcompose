@@ -1,6 +1,9 @@
 package com.dmytrobilash.rickmortyapijetpackcompose
 
+import android.app.Application
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -19,6 +22,7 @@ import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.BlendMode.Companion.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -34,6 +38,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val vm = MainViewModel()
+        Log.v("TAG",  vm.listResponse.toString())
         setContent {
             RickMortyApiJetpackComposeTheme {
                 // A surface container using the 'background' color from the theme
@@ -95,15 +100,21 @@ fun PersonList(personList: List<ResponseMain>){
     }
 }
 
-@OptIn(ExperimentalGlideComposeApi::class)
+@OptIn(ExperimentalGlideComposeApi::class, ExperimentalMaterialApi::class)
 @Composable
 fun personItem(person: ResponseMain, index: Int, selectedIndex: Int, onClick: (Int) -> Unit) {
+    val context = LocalContext.current
+
     Card(
+        onClick = {
+            val intent = Intent(context, DetailedPersonInformation::class.java)
+            context.startActivity(intent) },
         modifier = Modifier
             .padding(24.dp, 40.dp, 24.dp, 0.dp)
             .fillMaxWidth()
             .fillMaxHeight(),
         shape = RoundedCornerShape(8.dp)
+
     ) {
         Surface{
             Column(
