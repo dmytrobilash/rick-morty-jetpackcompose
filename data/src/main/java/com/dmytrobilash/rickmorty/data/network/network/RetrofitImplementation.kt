@@ -1,4 +1,4 @@
-package com.dmytrobilash.rickmortyapijetpackcompose.model.network
+package com.dmytrobilash.rickmorty.data.network.network
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

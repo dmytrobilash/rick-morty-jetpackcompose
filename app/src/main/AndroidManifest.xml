@@ -12,10 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RickMortyApiJetpackCompose">
         <activity
+            android:name=".DetailedPersonInformation"
+            android:exported="false"
+            android:label="@string/title_activity_detailed_person_infromation"
+            android:theme="@style/Theme.RickMortyApiJetpackCompose" />
+        <activity
             android:name=".MainActivity"
+            android:exported="true"
             android:label="@string/title_activity_main"
-            android:theme="@style/Theme.RickMortyApiJetpackCompose"
-            android:exported="true">
+            android:theme="@style/Theme.RickMortyApiJetpackCompose">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

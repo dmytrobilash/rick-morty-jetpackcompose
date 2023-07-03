@@ -30,7 +30,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
-import com.dmytrobilash.rickmortyapijetpackcompose.model.model.ResponseMain
+import com.dmytrobilash.rickmorty.data.network.model.model.ResponseMain
 import com.dmytrobilash.rickmortyapijetpackcompose.ui.theme.RickMortyApiJetpackComposeTheme
 import com.dmytrobilash.rickmortyapijetpackcompose.viewmodel.MainViewModel
 
@@ -88,7 +88,7 @@ fun TopPattern(){
 
 
 @Composable
-fun PersonList(personList: List<ResponseMain>){
+fun PersonList(personList: List<com.dmytrobilash.rickmorty.data.network.model.model.ResponseMain>){
     var selectedIndex by remember { mutableStateOf(-1) }
     LazyColumn {
 
@@ -102,12 +102,13 @@ fun PersonList(personList: List<ResponseMain>){
 
 @OptIn(ExperimentalGlideComposeApi::class, ExperimentalMaterialApi::class)
 @Composable
-fun personItem(person: ResponseMain, index: Int, selectedIndex: Int, onClick: (Int) -> Unit) {
+fun personItem(person: com.dmytrobilash.rickmorty.data.network.model.model.ResponseMain, index: Int, selectedIndex: Int, onClick: (Int) -> Unit) {
     val context = LocalContext.current
 
     Card(
         onClick = {
             val intent = Intent(context, DetailedPersonInformation::class.java)
+            intent.putExtra("Index", index)
             context.startActivity(intent) },
         modifier = Modifier
             .padding(24.dp, 40.dp, 24.dp, 0.dp)

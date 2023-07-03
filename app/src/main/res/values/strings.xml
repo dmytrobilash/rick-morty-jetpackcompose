@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Rick&amp;MortyApiJetpackCompose</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_detailed_person_infromation">DetailedPersonInfromation</string>
 </resources>

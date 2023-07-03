@@ -33,6 +33,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModelProvider
@@ -127,56 +129,66 @@ fun Information(){
 @Composable
 fun DetailedInformation(){
     Column (
-        modifier = Modifier.padding(start = 24.dp, top = 420.dp, end = 24.dp)
+        modifier = Modifier.padding(start = 40.dp, top = 420.dp, end = 24.dp)
     ){
 
         Text(
             text = "Gender",
-            fontSize = 16.sp
+            fontSize = 16.sp,
+            fontWeight = FontWeight.Bold
         )
         Text(
-            text = "Hello!",
-            fontSize = 16.sp
+            text = "Male",
+            fontSize = 14.sp,
         )
-        Divider(modifier = Modifier.fillMaxWidth(), color = Color.Gray)
+        Divider(modifier = Modifier.fillMaxWidth().padding(top = 8.dp), color = Color.Gray)
 
         Text(
-            text = "Status!",
-            fontSize = 16.sp
+            text = "Status",
+            fontSize = 16.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(top = 8.dp)
         )
         Text(
-            text = "Hello!",
-            fontSize = 16.sp
+            text = "Alive",
+            fontSize = 14.sp,
         )
-        Divider(modifier = Modifier.fillMaxWidth(), color = Color.Gray)
+        Divider(modifier = Modifier.fillMaxWidth().padding(top = 8.dp), color = Color.Gray)
 
         Text(
-            text = "Specie!",
-            fontSize = 16.sp
+            text = "Specie",
+            fontSize = 16.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(top = 8.dp)
         )
         Text(
-            text = "Hello!",
-            fontSize = 16.sp
+            text = "Human",
+            fontSize = 14.sp,
         )
-        Divider(modifier = Modifier.fillMaxWidth(), color = Color.Gray)
+        Divider(modifier = Modifier.fillMaxWidth().padding(top = 8.dp), color = Color.Gray)
 
         Text(
-            text = "Origin!",
-            fontSize = 16.sp
+            text = "Origin",
+            fontSize = 16.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(top = 8.dp)
         )
         Text(
-            text = "Origin!",
-            fontSize = 16.sp
+            text = "Earth",
+            fontSize = 14.sp,
         )
-        Divider(modifier = Modifier.fillMaxWidth(), color = Color.Gray)
+        Divider(modifier = Modifier.fillMaxWidth().padding(top = 8.dp), color = Color.Gray)
 
         Text(
-            text = "Type!",
-            fontSize = 16.sp
+            text = "Type",
+            fontSize = 16.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(top = 8.dp)
         )
         Text(
-            text = "Type!",
-            fontSize = 16.sp
+            text = "Unknown",
+            fontSize = 14.sp,
+            modifier = Modifier.padding(top = 8.dp, bottom = 8.dp)
         )
         Divider(modifier = Modifier.fillMaxWidth(), color = Color.Gray)
     }
