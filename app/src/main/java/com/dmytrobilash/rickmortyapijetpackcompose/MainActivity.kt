@@ -30,7 +30,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
-import com.dmytrobilash.rickmorty.data.network.model.model.ResponseMain
 import com.dmytrobilash.rickmortyapijetpackcompose.ui.theme.RickMortyApiJetpackComposeTheme
 import com.dmytrobilash.rickmortyapijetpackcompose.viewmodel.MainViewModel
 
@@ -48,7 +47,7 @@ class MainActivity : ComponentActivity() {
                     Column(
                         modifier = Modifier.fillMaxSize(),
                         verticalArrangement = Arrangement.Top,
-                        horizontalAlignment = Alignment.CenterHorizontally
+                        horizontalAlignment = CenterHorizontally
                     ) {
                         TopPattern()
                         PersonList(personList = vm.listResponse)
@@ -151,4 +150,26 @@ fun personItem(person: com.dmytrobilash.rickmorty.data.network.model.model.Respo
         }
     }
 }
+
+@Preview
+@Composable
+fun DefaultPreview(){
+    RickMortyApiJetpackComposeTheme {
+        // A surface container using the 'background' color from the theme
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+        ) {
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.Top,
+                horizontalAlignment = CenterHorizontally
+            ) {
+                TopPattern()
+                //PersonList(personList = vm.listResponse)
+            }
+        }
+    }
+}
+
+
 
